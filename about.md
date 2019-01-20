@@ -1,18 +1,9 @@
 ---
 layout: page
 title: About
-permalink: /about/
+sidebar_link: true
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This Week in Learning (TWiL) is a project started by Jackson and Chris when they were sophomores in college. Originally conceived of as a weekly newsletter sent to family and friends, they wanted to find a way to keep their people back home up-to-date on some of the interesting things they learned each week. TWiL updates are a way to write informally, yet informatively, about topics, happenings, and oddities we encounter in our lives.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+{% include email-subscribe-footer.html %}

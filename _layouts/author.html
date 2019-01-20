@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<header>
+  <h1 class="page-title">{{ page.title }}</h1>
+</header>
+<div class="content">
+  <div class="bio">{{ page.content }}</div>
+
+  {% assign firstname = page.title | split: ' ' | first %}
+  {% assign posts = site.posts | where: 'author', page.title %}
+
+  {% if page.title == "Other Contributors" %}
+      <ul class="posts-list">
+        {% for post in posts %}
+          <li>
+            <h3>
+              {% if post.guest_link %}<a href="{{ post.guest_link }}">{{ post.guest_author }}</a>{% else %}{{ post.guest_author }}{% endif %}:
+              <a href="{{ site.baseurl }}{{ post.url }}">
+                {{ post.title }}
+                <small>{{ post.date | date_to_string }}</small>
+              </a>
+            </h3>
+          </li>
+        {% endfor %}
+      </ul>
+  {% else %}
+    <h2>Posts by {{ firstname }}:</h2>
+    <ul class="posts-list">
+      {% for post in posts %}
+        <li>
+          <h3>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              {{ post.title }}
+              <small>{{ post.date | date_to_string }}</small>
+            </a>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

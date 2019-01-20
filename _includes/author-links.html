@@ -1,0 +1,11 @@
+{% comment %}
+  Dynamically generate list of links to all author pages
+{% endcomment %}
+
+{% assign authors_list = site.authors %}
+{% for node in authors_list %}
+  {% if node.title != null %}
+      <a class="category-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+  {% endif %}
+{% endfor %}
